@@ -99,7 +99,28 @@ Here's a list of stuff that will be different
 - Game History, data of a completed game will be saved to a database. with this data we can do fun stuff for example show what words get used alot. which letters get guessed first. stuff like that.
 
 # Architecture
-Architecture
+In this section you can find all my technical decisions, and why i chose them.
+
+## Structure
+This semester I make use of an microservice structure. I choose this structure since i thought it was a must to choose microservices for your individual project.
+
+## Coding Languages
+### Java
+This semester we have to make use of an OO based language. We got recommended to learn a new OO language, Java in particular. I thought it would be a pretty good idea to learn a new language so i picked up Java.
+
+### C#
+When i started to understand microservices i also understood it would be possible to make use of multiple coding languages. When i found out about this i instantly wanted to also make use of C# in my project, since:
+- It looked interesting to me to make 2 different applications with different coding languages talk to each other
+- I already have lots of experience in C#
+- I find coding in C# more fun than in java
+- I already coded all the logic behind Reverse Hangman in an application called [ReverseHangmanDesktop](https://github.com/CrossyChainsaw/ReverseHangmanDesktop) in C#. this means i can copy paste all logic from the other application I made, and this saves lots of time.
+
+### React
+in the requirements of the semester it's listed that we have to make use of an JavaScript front-end framework. In our group project we decided to choose React as the framework since one group member already had lots of experience in react. so if we ever got stuck with something he could always help us. Since we were using React in our group project it would be a pretty logical decision to also use it in my individual project, since it would take alot of time to learn 2 different front-end frameworks at the same time, ecspecially if you never learned one before.
+
+### Typescript
+In the requirements of the semester we have to make use of JavaScript? vraag ff.
+
 
 ## C-models
 c-models
