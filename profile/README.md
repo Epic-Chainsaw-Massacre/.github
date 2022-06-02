@@ -13,6 +13,7 @@
    - [What is Reverse Hangman Online?](#what-is-reverse-hangman-online)
      - [Differences with the original](#differences-with-the-original)
    - [Architecture](#architecture)
+     - [C-models](#c-models)
    - [Project Managment](#project-managment)
 
 # What is Reverse Hangman
@@ -70,7 +71,7 @@ So now we have 1 life left. and 9 remaining letters. This means if we guess a le
 
 If we would've decided to continue and correctly guess away the letters, we would've doubled the single point we got so we get 2 points.
 
-![image](https://user-images.githubusercontent.com/74303221/171621493-21c0e55a-df7e-498d-870e-201ef76eb1cf.png)
+![image](https://user-images.githubusercontent.com/74303221/171633133-606000ef-b056-4ee8-8a29-cbaf610937c7.png)
 
 ## Tiebreaker
 If you read it all very carefully, you might have noticed something. The guesser can run out of lives and reach the goal in the same guess. If this happens, the two teams both choose a member to make them play the tiebreaker. The tiebreaker consists of a minigame you guys can choose, usually it's Rock Paper Scissors. But the people who are free to decide what the tiebreaker will be.
@@ -99,6 +100,9 @@ Here's a list of stuff that will be different
 
 # Architecture
 Architecture
+
+## C-models
+c-models
 
 # Project Managment
 Project Managment
