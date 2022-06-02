@@ -15,8 +15,7 @@ Reverse hangman is as it says, hangman but reversed. You try to guess out letter
 The rules of this game are a bit more complicated than normal hangman so try to read it very carefully.
 
 The game has 2 teams which both have a different role
-- Wordmaster
-- Guesser
+#### Wordmaster
 
 The wordmaster starts the game by coming up with a word. This word will be only known by the wordmaster and not by the guesser. 
 
@@ -25,6 +24,8 @@ The word does have a few requirements
 - the different letters of the word summed up has to be more than 3 and less than 9
 
 If the word doesn't match one of those requirements the game should not start. If it does match the requirements, the game starts.
+
+#### Guesser
 
 ### Single round explained
 I will try to explain a game of Reverse Hangman using images from an appllication I made earlier [ReverseHangmanDesktop](https://github.com/CrossyChainsaw/ReverseHangmanDesktop). I will first explain something and below the explanation I will put an image that represents the stuff I explained.
