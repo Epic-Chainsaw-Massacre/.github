@@ -33,13 +33,22 @@ So the game starts with the wordmaster choosing a word
 
 ![image](https://user-images.githubusercontent.com/74303221/171599834-2db01975-7159-4286-a4b7-fc0ce9ff9243.png)
 
-The wordmaster chooses the word 'Clock'. The word Clock has 5 letters in total and 4 different letters. to calculate the goal and lives we use a few formulas. These formulas have orginated by just playing the game slot with different formulas and this felt the most fair for both teams.
+The wordmaster chooses the word 'Clock'. The word Clock has 5 letters in total and 4 different letters. to calculate the goal and lives we use formulas. These formulas have orginated by just playing the game slot with different formulas and this felt the most fair for both teams.
 - Lives = [Math.Floor](https://docs.microsoft.com/en-us/dotnet/api/system.math.floor?view=net-6.0)(different letters / 2) + 1 = [Math.Floor](https://docs.microsoft.com/en-us/dotnet/api/system.math.floor?view=net-6.0)(4 / 2) + 1 = 5
 - Goal < different letters * 2 = 4 * 2 = 8
 
 ![image](https://user-images.githubusercontent.com/74303221/171601772-d4875de7-607b-4bb5-89dd-2ddf02c61069.png)
 
-From now of on the Guesser will start guessing.
+From now of on the Guesser will start guessing. Lets say the Guesser guesses the letter 'Z'. The letter Z is not in the word. The result after the guess is that remaining letters now is 25. Lives aren't affected at all since the letters isn't in the word.
+
+![image](https://user-images.githubusercontent.com/74303221/171605450-fb7dd974-2e2b-477c-91f7-69001719bbf4.png)
+
+Now the Guesser guesses the letter 'O'. The O is in the word, this means the O gets displayed in the word, this also means remaining letters is one less, also does it mean you lost a life.
+
+![image](https://user-images.githubusercontent.com/74303221/171604631-bed6db7b-0c0c-4069-b324-e0479f6cd470.png)
+
+
+
 
 ### Points
 
