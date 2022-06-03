@@ -11,6 +11,9 @@
    - [What is Reverse Hangman Online?](#what-is-reverse-hangman-online)
      - [Differences with the original](#differences-with-the-original)
    - [Architecture](#architecture)
+     - [Structure](#structure)
+     - [Coding Languages](#coding-languages)
+     - [Database](#database) 
      - [C-Models](#c-models)
    - [Project Managment](#project-managment)
 
@@ -119,11 +122,20 @@ in the requirements of the semester it's listed that we have to make use of an J
 ### Typescript
 In the requirements of the semester it's stated that we have to make use of JavaScript. I heared alot of classmates chatting about TypeScript. It appears to be a language that translates itself to JavaScript. The main reason why i chose TypeScript over JavaScript, is because in the IDE it shows errors while trying to build. If there is an error the application won't start. This makes it so much easier to find errors in my application. And in the end that saves alot of time.
 
+## Database
+EXPLAIN WHAT DATABASE I USE AND WHY.
+EXPLAIN WHAT DATABASE I USE AND WHY.
+EXPLAIN WHAT DATABASE I USE AND WHY.
+EXPLAIN WHAT DATABASE I USE AND WHY.
+EXPLAIN WHAT DATABASE I USE AND WHY.
+
 ## C-Models
+You are going to see some images of my C-Models. These images were originally pretty big. I tried to make them a bit smaller but they are still huge. If i made them even smaller the quality dropped too much. I'd advise zooming your screen out or just clicking the image. This makes it easier to read and view the image at the same time.
+
 ### C1-Model
 I visualised my architecture with c-models. here is my C1-Model. There isn't much to see. You see a client visit the game, the game makes use of an [external dictionary API](https://dictionaryapi.com/). More information in the C2-Model.
 
-![image](https://user-images.githubusercontent.com/74303221/171854991-2641bc8b-5220-4ff1-a591-2fb549582107.png)
+![image](https://user-images.githubusercontent.com/74303221/171859622-b3d924e8-3ab6-4da5-ab1c-427d2d1d5575.png)
 
 ### C2-Model
 So here you see 4 applications. Lets slowly go through the flow of my application. The client visits the [front-end](https://github.com/Epic-Chainsaw-Massacre/reverse-hangman-online-frontend). The client fills in a word, this word gets send to the [WordService](https://github.com/Epic-Chainsaw-Massacre/Word-Service). WordService makes use of the external dictionary API to check if the word exists. The WordService sends the result of this check back to the frontend. If the result says the word exists, the game starts. This is where the [Backend](https://github.com/Epic-Chainsaw-Massacre/reverse-hangman-online-backend) comes into play. All logic of the game itself is coded in the backend. the front-end and the backend talk using JSON. the front-end asks for something and the backend gives it. if the game is completed, the [GameHistoryService](https://github.com/Epic-Chainsaw-Massacre/Game-Statistics-Service) comes in action. The front-end sends the game results to the GameHistoryService. The GameHistoryService saves these results to a MYSQL database. In the future it would be a cool idea to do something with this data. For example show what letters get guessed the most in the first turn or what words get used the most.
@@ -132,6 +144,17 @@ So here you see 4 applications. Lets slowly go through the flow of my applicatio
 
 
 # Project Managment
-Project Managment
+The project is being managed on the GitHub organization called [Reverse Hangman Online](https://github.com/Epic-Chainsaw-Massacre). If you just clicked the link or checked my repositories you can see its sometimes called 'Epic Chainsaw Massacre'. This is an outdated name, it refers to Reverse Hangman Online.
+
+## Problem
+(Het volgende wat je gaat lezen is best wel stom en geforceerd, kan ik dit anders aanpakken?)
+I started the project by creating a problem. My problem:
+
+I am a gamer that gets bored when i have a small amount of free time. For example, breaks at school. They are only 1 hour long and usually we just hang arround being bored. In an hour you have enough time to play any game, but another issue is that the internet connection at school isn't ideal. I am a big fan of word games, ecspecially hangman. But after playing hours of hangman this started to bore me. I'd like to play a game that looks like hangman but with a twist. I want the game to be challenging so i won't get bored, also implementing an online multiplayer would awesome.
+
+## User Stories
+Using this problem i started to formulate requirements for my application. I rewrote the requirements as user stories. You can find all my user stories back in my [Organizaitons' project](https://github.com/orgs/Epic-Chainsaw-Massacre/projects/2). Here i can assign an user story to 'Todo', 'In Progress' and 'Done'. Also you see labels. I added labels to each user story to show..................... missing functionality github.
+
+NOG NIET AF HIER
 
 <!-- this is a comment -->
