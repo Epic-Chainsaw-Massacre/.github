@@ -5,15 +5,13 @@
 ## Table of contents
    - [What is Reverse Hangman?](#what-is-reverse-hangman) <!-- probleem opstelling -->
      - [Rules](#rules)
-       - [Wordmaster](#wordmaster)
-       - [Guesser](#Guesser)
      - [Single Round Explained](#single-round-explained)
      - [Tiebreaker](#tiebreaker)
      - [Points](#points)
    - [What is Reverse Hangman Online?](#what-is-reverse-hangman-online)
      - [Differences with the original](#differences-with-the-original)
    - [Architecture](#architecture)
-     - [C-models](#c-models)
+     - [C-Models](#c-models)
    - [Project Managment](#project-managment)
 
 # What is Reverse Hangman
@@ -102,7 +100,7 @@ Here's a list of stuff that will be different
 In this section you can find all my technical decisions, and why i chose them.
 
 ## Structure
-This semester I make use of an microservice structure. I choose this structure since i thought it was a must to choose microservices for your individual project.
+This semester I make use of an microservice structure. I choose this structure since i thought it was a must to choose microservices for your individual project. Other than that there isn't another reason i choose a microservice structure. Later on, in the final 3 weeks, i found out it wasn't a must to choose a microservice architecture. If i found out earlier i might have chosen a different structure since it's quite a mess to maintain like 4 different applications by yourself for a small school project. But in the end of the day it was a good practise so it wasn't a waste of time.
 
 ## Coding Languages
 ### Java
@@ -119,11 +117,19 @@ When i started to understand microservices i also understood it would be possibl
 in the requirements of the semester it's listed that we have to make use of an JavaScript front-end framework. In our group project we decided to choose React as the framework since one group member already had lots of experience in react. so if we ever got stuck with something he could always help us. Since we were using React in our group project it would be a pretty logical decision to also use it in my individual project, since it would take alot of time to learn 2 different front-end frameworks at the same time, ecspecially if you never learned one before.
 
 ### Typescript
-In the requirements of the semester we have to make use of JavaScript? vraag ff.
+In the requirements of the semester it's stated that we have to make use of JavaScript. I heared alot of classmates chatting about TypeScript. It appears to be a language that translates itself to JavaScript. The main reason why i chose TypeScript over JavaScript, is because in the IDE it shows errors while trying to build. If there is an error the application won't start. This makes it so much easier to find errors in my application. And in the end that saves alot of time.
 
+## C-Models
+### C1-Model
+I visualised my architecture with c-models. here is my C1-Model. There isn't much to see. You see a client visit the game, the game makes use of an [external dictionary API](https://dictionaryapi.com/). More information in the C2-Model.
 
-## C-models
-c-models
+![image](https://user-images.githubusercontent.com/74303221/171854991-2641bc8b-5220-4ff1-a591-2fb549582107.png)
+
+### C2-Model
+So here you see 4 applications. Lets slowly go through the flow of my application. The client visits the [front-end](https://github.com/Epic-Chainsaw-Massacre/reverse-hangman-online-frontend). The client fills in a word, this word gets send to the [WordService](https://github.com/Epic-Chainsaw-Massacre/Word-Service). WordService makes use of the external dictionary API to check if the word exists. The WordService sends the result of this check back to the frontend. If the result says the word exists, the game starts. This is where the [Backend](https://github.com/Epic-Chainsaw-Massacre/reverse-hangman-online-backend) comes into play. All logic of the game itself is coded in the backend. the front-end and the backend talk using JSON. the front-end asks for something and the backend gives it. if the game is completed, the [GameHistoryService](https://github.com/Epic-Chainsaw-Massacre/Game-Statistics-Service) comes in action. The front-end sends the game results to the GameHistoryService. The GameHistoryService saves these results to a MYSQL database. In the future it would be a cool idea to do something with this data. For example show what letters get guessed the most in the first turn or what words get used the most.
+
+![image](https://user-images.githubusercontent.com/74303221/171856594-17ae166a-8116-44a8-9657-5ae43cb20f8e.png)
+
 
 # Project Managment
 Project Managment
