@@ -8,7 +8,7 @@
      - [Single Round Explained](#single-round-explained)
      - [Tiebreaker](#tiebreaker)
      - [Points](#points)
-     - [Strategy(#strategy)]
+     - [Strategy](#strategy)
    - [What is Reverse Hangman Online?](#what-is-reverse-hangman-online)
      - [Differences with the original](#differences-with-the-original)
    - [Architecture](#architecture)
