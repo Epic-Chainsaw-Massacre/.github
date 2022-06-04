@@ -8,6 +8,7 @@
      - [Single Round Explained](#single-round-explained)
      - [Tiebreaker](#tiebreaker)
      - [Points](#points)
+     - [Strategy(#strategy)]
    - [What is Reverse Hangman Online?](#what-is-reverse-hangman-online)
      - [Differences with the original](#differences-with-the-original)
    - [Architecture](#architecture)
@@ -16,6 +17,8 @@
      - [Database](#database) 
      - [C-Models](#c-models)
    - [Project Managment](#project-managment)
+     - [Problem](#problem)
+     - [User Stories](#user-stories)   
 
 # What is Reverse Hangman
 Reverse hangman is as it says, hangman but reversed. You try to guess out letters that the word does not contain. 
@@ -35,22 +38,22 @@ The word does have a few requirements
 If the word doesn't match one of those requirements the game should not start. If it does match the requirements, the game starts.
 
 ### Guesser
-The guesser simply guesses letters trying to avoid the ones that are in the word. Ff the goal is reached while guessing, the guesser can decide to continue playing for double or nothing. If he does continue, the guesser has to guess out all letters that aren't in the word. If he loses all his lives in this proces he gets 0 points, if he succeeds, his points are doubled.
+The guesser simply guesses letters trying to avoid the ones that are in the word. Ff the goal is reached while guessing, the guesser can decide to continue playing for double or nothing. If he does continue, the guesser has to guess out all letters that aren't in the word. If he loses all his lives in this process he gets 0 points, if he succeeds, his points are doubled.
 
 ## Single round explained
-I will try to explain a game of Reverse Hangman using images from an appllication I made earlier [ReverseHangmanDesktop](https://github.com/CrossyChainsaw/ReverseHangmanDesktop). I will first explain something and below the explanation I will put an image that represents the stuff I explained.
+I will try to explain a game of Reverse Hangman using images from an application I made earlier [ReverseHangmanDesktop](https://github.com/CrossyChainsaw/ReverseHangmanDesktop). I will first explain something and below the explanation I will put an image that represents the stuff I explained.
 
-So the game starts with the wordmaster choosing a word
+So, the game starts with the wordmaster choosing a word
 
 ![image](https://user-images.githubusercontent.com/74303221/171599834-2db01975-7159-4286-a4b7-fc0ce9ff9243.png)
 
-The wordmaster chooses the word 'Clock'. The word Clock has 5 letters in total and 4 different letters. to calculate the goal and lives we use formulas. These formulas have orginated by just playing the game slot with different formulas and this felt the most fair for both teams.
+The wordmaster chooses the word 'Clock'. The word Clock has 5 letters in total and 4 different letters. to calculate the goal and lives we use formulas. These formulas have originated by just playing the game slot with different formulas and this felt the fairest for both teams.
 - Lives = [Math.Floor](https://docs.microsoft.com/en-us/dotnet/api/system.math.floor?view=net-6.0)(different letters / 2) + 1 = [Math.Floor](https://docs.microsoft.com/en-us/dotnet/api/system.math.floor?view=net-6.0)(4 / 2) + 1 = 5
 - Goal < different letters * 2 = 4 * 2 = 8
 
 ![image](https://user-images.githubusercontent.com/74303221/171601772-d4875de7-607b-4bb5-89dd-2ddf02c61069.png)
 
-From now of on the Guesser will start guessing. Lets say the Guesser guesses the letter 'Z'. The letter Z is not in the word. The result after the guess is that remaining letters now is 25. Lives aren't affected at all since the letters isn't in the word.
+From now of on the Guesser will start guessing. Let's say the Guesser guesses the letter 'Z'. The letter Z is not in the word. The result after the guess is that remaining letters now is 25. Lives aren't affected at all since the letters isn't in the word.
 
 ![image](https://user-images.githubusercontent.com/74303221/171605450-fb7dd974-2e2b-477c-91f7-69001719bbf4.png)
 
@@ -58,15 +61,15 @@ Now the Guesser guesses the letter 'O'. The O is in the word, this means the O g
 
 ![image](https://user-images.githubusercontent.com/74303221/171604631-bed6db7b-0c0c-4069-b324-e0479f6cd470.png)
 
-Lets guess alot of letters that aren't in the word. Here we guessed away the following letters: A, B, D, E, F, G, H, I, J, M, N, W, X, Y. Since none of these are in the word, lives remain the same. remaining letters becomes 10 now.
+Let's guess a lot of letters that aren't in the word. Here we guessed away the following letters: A, B, D, E, F, G, H, I, J, M, N, W, X, Y. Since none of these are in the word, lives remain the same. remaining letters becomes 10 now.
 
 ![image](https://user-images.githubusercontent.com/74303221/171618771-1e4a1a23-f9ea-4dfc-9816-a6e9ecc42518.png)
 
-We guessed the letter 'C', the letter C is twice in the word. This make no difference. result is -1 life and -1 remaining letters.
+We guessed the letter 'C', the letter C is twice in the word. This makes no difference. result is -1 life and -1 remaining letters.
 
 ![image](https://user-images.githubusercontent.com/74303221/171620117-e75019fb-5201-4836-a179-59be767769ae.png)
 
-So now we have 1 life left. and 9 remaining letters. This means if we guess a letter that's in the word we lose this round. lets guess the letter 'V' and 'T'. The letter V and T both aren't in the word so we reached our goal, <8, with lives remaining. This means we get 1 point, and a decision. We can wager the points we won this round and double them if we guess out all letters to double our points. looking at the image i cant figure out what the word might be, so to play it safe i stop here and take my one point.
+So now we have 1 life left. and 9 remaining letters. This means if we guess a letter that's in the word we lose this round. Let's guess the letter 'V' and 'T'. The letter V and T both aren't in the word so we reached our goal, <8, with lives remaining. This means we get 1 point, and a decision. We can wager the points we won this round and double them if we guess out all letters to double our points. looking at the image I can't figure out what the word might be, so to play it safe I stop here and take my one point.
 
 ![image](https://user-images.githubusercontent.com/74303221/171620477-b90961df-9af0-47a0-94b2-fdc6aa9355bd.png)
 
@@ -87,6 +90,46 @@ First of all, only the guesser can earn points. The guesser can win a few differ
 - Noble Sweep (+3 points): you reached the goal without losing a single life.
 - Clean Noble Sweep (+6 points): you reached the goal without losing a life, continued, guessed away all letters that aren't in the word, but lost at least a single life in the proces
 - Royal Sweep (+10 points): guessed away all letters that aren't in the word without losing a single life.
+
+## Strategy
+In the end of the day, if you understand all rules, it's quite a simple game. To add more excitement to your games I'll share some strategies we found out playing this game.
+
+### Trade life for clean sweep
+
+#### Example 1 (Free Clean Sweep)
+Let's look at the picture below. A few important things to see here. First of all, we have 2 lives and we have to guess only one letter to reach the goal. In this case the only words it can be are 'Hazy' and 'Lazy'. Guessing an 'A' or an 'Y' would be completely irrelevant. If we guess the letter 'L' or 'H' we filter out one of the words leaving only the other word. and since you have 2 lives this is a safe bet. 
+
+![image](https://user-images.githubusercontent.com/74303221/171993891-e599740f-d323-4287-85b0-1f2d7a7b3ae5.png)
+
+Let's say we guess the letter 'H'. Letter 'H' isn't in the word, so the word has to be 'Lazy'.
+
+![image](https://user-images.githubusercontent.com/74303221/171994066-3c15008e-43ef-43d1-86f0-978cf178005a.png)
+
+This gives us 2 points instead of 1. watch out for these free oppurtunities.
+
+![image](https://user-images.githubusercontent.com/74303221/171994164-c11cfd23-a799-435a-a927-554fea0cc2b4.png)
+
+#### Exmaple 2 (Bigger chance to Clean Sweep)
+In this example I will keep the word secret for now ;). In this example we already guessed the letter 'A'. we have 3 lives left, and we can guess 2 more letters. This means that if we guess wrong twice, we still have a life remaining. If we look at the word now we can't guess what it is. An, in my opinion, good strategy here would be to intentionally do a wrong guess twice here. We should try to guess letters that are uncommon but fit in the word (You can also start guessing wrong when you have to guess 3 letters or 4 letters but it adds a little risk to it if you only have 3 lives, since you might just guess wrong 3 times and lose all lives without getting a single point).
+
+![image](https://user-images.githubusercontent.com/74303221/171994781-1594f439-50ce-4528-8ce5-7bd2d160146a.png)
+
+For example we guess the letters 'T' and 'R'.
+
+![image](https://user-images.githubusercontent.com/74303221/171995093-4ea15a0f-2f58-4b02-ad34-a9b4be42747c.png)
+
+I guess the word is 'Starfish', so hope for the best.
+
+![image](https://user-images.githubusercontent.com/74303221/171995137-82e3cc06-ef91-482b-8cef-a85e5d843d3b.png)
+
+And surprise surprise. Clean sweep.
+
+### No Q no U
+If a word doesn't have a 'Q' the chance of having an 'U' is very low. The words that have a 'Q' but no 'U' are usually imported form different languages. There are also more combinations like this, for example a 'C' gets along with 'U' very well. Important to note is that this isn't always the case.
+
+### The Obvious Letters
+If you are the wordmaster, try avoid making words with an 'X', 'Z', 'J'. These letters are the least used in the english language. This means that if you make a word with these letters, it's easier for the guesser to filter out words. Try making words with the most common letters in the alphabet, so that of the guesser has 1 life left, the words isn't obvious, so you avoid giving out Clean sweeps.
+
 
 # What is Reverse Hangman Online
 Reverse Hangman Online is a web application where you can play Reverse Hangman. At the end of my semester i want to have a website everyone can go to to play reverse hangman. 
@@ -123,6 +166,8 @@ in the requirements of the semester it's listed that we have to make use of an J
 In the requirements of the semester it's stated that we have to make use of JavaScript. I heared alot of classmates chatting about TypeScript. It appears to be a language that translates itself to JavaScript. The main reason why i chose TypeScript over JavaScript, is because in the IDE it shows errors while trying to build. If there is an error the application won't start. This makes it so much easier to find errors in my application. And in the end that saves alot of time.
 
 ## Database
+**(Not-Researched-Yet)**
+I've chosen for an MYSQL database, this was the result of a small research for the gp i did. BUT the database i use in my IP can still change. I want to do a good research to find out which database fits my application the best. 
 EXPLAIN WHAT DATABASE I USE AND WHY.
 EXPLAIN WHAT DATABASE I USE AND WHY.
 EXPLAIN WHAT DATABASE I USE AND WHY.
@@ -147,14 +192,12 @@ So here you see 4 applications. Lets slowly go through the flow of my applicatio
 The project is being managed on the GitHub organization called [Reverse Hangman Online](https://github.com/Epic-Chainsaw-Massacre). If you just clicked the link or checked my repositories you can see its sometimes called 'Epic Chainsaw Massacre'. This is an outdated name, it refers to Reverse Hangman Online.
 
 ## Problem
-(Het volgende wat je gaat lezen is best wel stom en geforceerd, kan ik dit anders aanpakken?)
+(Het volgende wat je gaat lezen is best wel stom en geforceerd, kan ik dit anders aanpakken? dan denk ik aan iets als, een andere formulering voor de oorzaak van deze applicatie, want ik heb dit eigenlijk gewoon gemaakt omdat dit me leuk leek om te maken.)
 I started the project by creating a problem. My problem:
 
 I am a gamer that gets bored when i have a small amount of free time. For example, breaks at school. They are only 1 hour long and usually we just hang arround being bored. In an hour you have enough time to play any game, but another issue is that the internet connection at school isn't ideal. I am a big fan of word games, ecspecially hangman. But after playing hours of hangman this started to bore me. I'd like to play a game that looks like hangman but with a twist. I want the game to be challenging so i won't get bored, also implementing an online multiplayer would awesome.
 
 ## User Stories
-Using this problem i started to formulate requirements for my application. I rewrote the requirements as user stories. You can find all my user stories back in my [Organizaitons' project](https://github.com/orgs/Epic-Chainsaw-Massacre/projects/2). Here i can assign an user story to 'Todo', 'In Progress' and 'Done'. Also you see labels. I added labels to each user story to show..................... missing functionality github.
-
-NOG NIET AF HIER
+Using this problem i started to formulate requirements for my application. I rewrote the requirements as user stories. You can find all my user stories back in my [Organizaitons' project](https://github.com/orgs/Epic-Chainsaw-Massacre/projects/2). Here i can assign an user story to 'Todo', 'In Progress' and 'Done'. Also you see labels. I added labels to each user story to show which application it belongs to. Now why did i use labels you'd ask? It's because of a missing important functionality in github. It is not possible to link a user story to 2 different repositories, strange i know. I tried to work my wy arround this problem by putting all user stories in a single repository. All user stories are located in [Reverse-Hangman-Online-Frontend](https://github.com/Epic-Chainsaw-Massacre/reverse-hangman-online-frontend), in the issues section. This is the reason why i use labels to indicate what application an user story belongs to.
 
 <!-- this is a comment -->
