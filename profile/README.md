@@ -185,7 +185,8 @@ I visualised my architecture with c-models. here is my C1-Model. There isn't muc
 ### C2-Model
 So here you see 4 applications. Lets slowly go through the flow of my application. The client visits the [front-end](https://github.com/Epic-Chainsaw-Massacre/reverse-hangman-online-frontend). The client fills in a word, this word gets send to the [WordService](https://github.com/Epic-Chainsaw-Massacre/Word-Service). WordService makes use of the external dictionary API to check if the word exists. The WordService sends the result of this check back to the frontend. If the result says the word exists, the game starts. This is where the [Backend](https://github.com/Epic-Chainsaw-Massacre/reverse-hangman-online-backend) comes into play. All logic of the game itself is coded in the backend. the front-end and the backend talk using JSON. the front-end asks for something and the backend gives it. if the game is completed, the [GameHistoryService](https://github.com/Epic-Chainsaw-Massacre/Game-Statistics-Service) comes in action. The front-end sends the game results to the GameHistoryService. The GameHistoryService saves these results to a MYSQL database. In the future it would be a cool idea to do something with this data. For example show what letters get guessed the most in the first turn or what words get used the most.
 
-![image](https://user-images.githubusercontent.com/74303221/171856594-17ae166a-8116-44a8-9657-5ae43cb20f8e.png)
+![image](https://user-images.githubusercontent.com/74303221/172374605-34d8e6bc-5380-4fcd-b61f-67e5326276d9.png)
+
 
 
 # Project Managment
