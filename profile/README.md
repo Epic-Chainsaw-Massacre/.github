@@ -17,7 +17,7 @@
      - [Database](#database) 
      - [C-Models](#c-models)
    - [Project Managment](#project-managment)
-     - [Problem](#problem)
+     - [Project Idea](#project-idea)
      - [User Stories](#user-stories)   
 
 # What is Reverse Hangman
