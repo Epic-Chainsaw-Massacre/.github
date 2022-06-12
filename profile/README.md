@@ -166,7 +166,6 @@ in the requirements of the semester it's listed that we have to make use of an J
 In the requirements of the semester it's stated that we have to make use of JavaScript. I heard a lot of classmates chatting about TypeScript. It appears to be a language that translates itself to JavaScript. The main reason why I chose TypeScript over JavaScript, is because in the IDE it shows errors while trying to build. If there is an error the application won't start. This makes it so much easier to find errors in my application. And in the end that saves a lot of time.
 
 ## Database
-**(Not-Researched-Yet)**
 I've chosen for an MYSQL database. This is the result of a database research I did. I research which database is most suitable for my application. The result was a relational database that only need to have the types string and numeric. This gave me a choice between a few databases. In the end I chose MySQL since I already used MySQL for my GP this semester. This way I use a database that fits my application, and a database I already have experience with, so that also saves some time. For the entire research checkout my database research.
 
 [Database Research](https://github.com/CrossyChainsaw/Portfolio/tree/master/Database%20Research)
