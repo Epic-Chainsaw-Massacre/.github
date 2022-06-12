@@ -167,15 +167,13 @@ In the requirements of the semester it's stated that we have to make use of Java
 
 ## Database
 **(Not-Researched-Yet)**
-I've chosen for an MYSQL database, this was the result of a small research for the GP I did. BUT the database I use in my IP can still change. I want to do a good research to find out which database fits my application the best. 
-EXPLAIN WHAT DATABASE I USE AND WHY.
-EXPLAIN WHAT DATABASE I USE AND WHY.
-EXPLAIN WHAT DATABASE I USE AND WHY.
-EXPLAIN WHAT DATABASE I USE AND WHY.
-EXPLAIN WHAT DATABASE I USE AND WHY.
+I've chosen for an MYSQL database. This is the result of a database research I did. I research which database is most suitable for my application. The result was a relational database that only need to have the types string and numeric. This gave me a choice between a few databases. In the end I chose MySQL since I already used MySQL for my GP this semester. This way I use a database that fits my application, and a database I already have experience with, so that also saves some time. For the entire research checkout my database research.
+
+blank v
+[Database Research](#blank)
 
 ## C-Models
-You are going to see some images of my C-Models. These images were originally pretty big. I tried to make them a bit smaller but they are still huge. If i made them even smaller the quality dropped too much. I'd advise zooming your screen out or just clicking the image. This makes it easier to read and view the image at the same time.
+You are going to see some images of my C-Models. These images were originally pretty big. I tried to make them a bit smaller but they are still huge. If I made them even smaller the quality dropped too much. I'd advise zooming your screen out or just clicking the image. This makes it easier to read and view the image at the same time.
 
 ### C1-Model
 I visualised my architecture with c-models. here is my C1-Model. There isn't much to see. You see a client visit the game, the game makes use of an [external dictionary API](https://dictionaryapi.com/). More information in the C2-Model.
