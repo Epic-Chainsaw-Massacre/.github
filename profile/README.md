@@ -143,17 +143,17 @@ Here's a list of stuff that will be different
 - Game History, data of a completed game will be saved to a database. with this data we can do fun stuff for example show what words get used a lot. which letters get guessed first. stuff like that.
 
 # Architecture
-In this section you can find all my technical decisions, and why i chose them.
+In this section you can find all my technical decisions, and why I chose them.
 
 ## Structure
-This semester I make use of an microservice structure. I choose this structure since i thought it was a must to choose microservices for your individual project. Other than that there isn't another reason I choose a microservice structure. Later on, in the final 3 weeks, I found out it wasn't a must to choose a microservice architecture. If i found out earlier I might have chosen a different structure since it's quite a mess to maintain like 4 different applications by yourself for a small school project. But in the end of the day it was a good practise so it wasn't a waste of time.
+This semester I make use of an microservice structure. I choose this structure since I thought it was a must to choose microservices for your individual project. Other than that there isn't another reason I choose a microservice structure. Later on, in the final 3 weeks, I found out it wasn't a must to choose a microservice architecture. If i found out earlier I might have chosen a different structure since it's quite a mess to maintain like 4 different applications by yourself for a small school project. But in the end of the day it was a good practise so it wasn't a waste of time.
 
 ## Coding Languages
 ### Java
-This semester we have to make use of an OO based language. We got recommended to learn a new OO language, Java in particular. I thought it would be a pretty good idea to learn a new language so i picked up Java.
+This semester we have to make use of an OO based language. We got recommended to learn a new OO language, Java in particular. I thought it would be a pretty good idea to learn a new language so I picked up Java.
 
 ### C#
-When i started to understand microservices I also understood it would be possible to make use of multiple coding languages. When I found out about this I instantly wanted to also make use of C# in my project, since:
+When I started to understand microservices I also understood it would be possible to make use of multiple coding languages. When I found out about this I instantly wanted to also make use of C# in my project, since:
 - It looked interesting to me to make 2 different applications with different coding languages talk to each other
 - I already have lots of experience in C#
 - I find coding in C# more fun than in java
@@ -163,7 +163,7 @@ When i started to understand microservices I also understood it would be possibl
 in the requirements of the semester it's listed that we have to make use of an JavaScript front-end framework. In our group project we decided to choose React as the framework since one group member already had lots of experience in react. so if we ever got stuck with something he could always help us. Since we were using React in our group project it would be a pretty logical decision to also use it in my individual project, since it would take a lot of time to learn 2 different front-end frameworks at the same time, especially if you never learned one before.
 
 ### Typescript
-In the requirements of the semester it's stated that we have to make use of JavaScript. I heard a lot of classmates chatting about TypeScript. It appears to be a language that translates itself to JavaScript. The main reason why i chose TypeScript over JavaScript, is because in the IDE it shows errors while trying to build. If there is an error the application won't start. This makes it so much easier to find errors in my application. And in the end that saves a lot of time.
+In the requirements of the semester it's stated that we have to make use of JavaScript. I heard a lot of classmates chatting about TypeScript. It appears to be a language that translates itself to JavaScript. The main reason why I chose TypeScript over JavaScript, is because in the IDE it shows errors while trying to build. If there is an error the application won't start. This makes it so much easier to find errors in my application. And in the end that saves a lot of time.
 
 ## Database
 **(Not-Researched-Yet)**
@@ -195,6 +195,6 @@ The project is being managed on the GitHub organization called [Reverse Hangman 
 For my individual project I wanted to make a game. In general I always enjoy coding games, for me it keeps school pretty fun. I made a prototype-ish application in WinForms called [ReverseHangmanDesktop](https://github.com/CrossyChainsaw/ReverseHangmanDesktop). The game was original so I really wanted to take it more seriously. That's why I decided to choose it for my individual project
 
 ## User Stories
-I started making requirements for my application using my own wishes. Everything i'd like to see in the game became a requirement. I rewrote the requirements as user stories. You can find all my user stories back in my [Organizations' project](https://github.com/orgs/Epic-Chainsaw-Massacre/projects/2). Here i can assign an user story to 'Todo', 'In Progress' and 'Done'. Also you see labels. I added labels to each user story to show which application it belongs to. Now why did i use labels you'd ask? It's because of a missing important functionality in GitHub. It is not possible to link a user story to 2 different repositories, strange i know. I tried to work my way arround this problem by putting all user stories in a single repository. All user stories are located in [Reverse-Hangman-Online-Frontend](https://github.com/Epic-Chainsaw-Massacre/reverse-hangman-online-frontend), in the issues section. This is the reason why i use labels to indicate what application an user story belongs to.
+I started making requirements for my application using my own wishes. Everything I'd like to see in the game became a requirement. I rewrote the requirements as user stories. You can find all my user stories back in my [Organizations' project](https://github.com/orgs/Epic-Chainsaw-Massacre/projects/2). Here I can assign an user story to 'Todo', 'In Progress' and 'Done'. Also you see labels. I added labels to each user story to show which application it belongs to. Now why did I use labels you'd ask? It's because of a missing important functionality in GitHub. It is not possible to link a user story to 2 different repositories, strange I know. I tried to work my way arround this problem by putting all user stories in a single repository. All user stories are located in [Reverse-Hangman-Online-Frontend](https://github.com/Epic-Chainsaw-Massacre/reverse-hangman-online-frontend), in the issues section. This is the reason why I use labels to indicate what application an user story belongs to.
 
 <!-- this is a comment -->
