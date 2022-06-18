@@ -88,7 +88,7 @@ First of all, only the guesser can earn points. The guesser can win a few differ
 - Clean Sweep (+2 points): guessed out all letters that aren't in the word, and has at least a life remaining.
 - Failed Clean Sweep (+0 points): you continued after a Sweep but lost all lives in the process.
 - Noble Sweep (+3 points): you reached the goal without losing a single life.
-- Clean Noble Sweep (+6 points): you reached the goal without losing a life, continued, guessed away all letters that aren't in the word, but lost at least a single life in the process
+- Noble Clean Sweep (+6 points): you reached the goal without losing a life, continued, guessed away all letters that aren't in the word, but lost at least a single life in the process
 - Royal Sweep (+10 points): guessed away all letters that aren't in the word without losing a single life.
 
 ## Strategy
